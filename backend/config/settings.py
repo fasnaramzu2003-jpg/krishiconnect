@@ -140,3 +140,19 @@ DATABASES = {
 
 INSTALLED_APPS += ["rest_framework", "corsheaders", "accounts"]
 AUTH_USER_MODEL = "accounts.CustomUser"
+INSTALLED_APPS += ["rest_framework.authtoken"]
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticatedOrReadOnly",
+    ],
+    "DEFAULT_THROTTLE_CLASSES": [
+        "rest_framework.throttling.AnonRateThrottle",
+        "rest_framework.throttling.UserRateThrottle",
+    ],
+    "DEFAULT_THROTTLE_RATES": {"anon": "60/min", "user": "120/min"},
+}
