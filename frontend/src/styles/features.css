@@ -1,0 +1,44 @@
+
+html { scroll-behavior: smooth; }
+
+.section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; scroll-margin-top: 1rem; }
+.section h2 {
+  margin: 0 0 0.5rem;
+  color: var(--forest);
+  text-align: center;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+}
+.section-lead { max-width: 640px; margin: 0 auto 2.5rem; text-align: center; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.feature-card {
+  height: 100%;
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid #dbe8dd;
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(23, 107, 69, 0.12);
+}
+.feature-card h3 { margin: 0.75rem 0 0.5rem; color: var(--forest); font-size: 1.15rem; }
+.feature-card p { margin: 0; }
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  background: #e6f1e8;
+  color: var(--forest);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
