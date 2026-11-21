@@ -1,6 +1,6 @@
 
 import '../styles/features.css'
-
+import useScrollReveal from '../hooks/useScrollReveal.js'
 const FEATURES = [
   {
     title: 'Farm and crop management',
@@ -33,8 +33,10 @@ const FEATURES = [
 ]
 
 export default function Features() {
+ 
+const sectionRef = useScrollReveal()
   return (
-    <section id="features" className="section" aria-labelledby="features-title">
+    <section id="features" className="section" aria-labelledby="features-title" ref={sectionRef}>
       <h2 id="features-title">Everything a farm needs, in one place</h2>
       <p className="section-lead">
         These are the features we are building. Features marked Planned are
@@ -42,7 +44,7 @@ export default function Features() {
       </p>
       <ul className="feature-grid">
         {FEATURES.map((feature) => (
-          <li key={feature.title}>
+          <li key={feature.title} data-reveal>
             <article className="feature-card">
               <span className="badge">Planned</span>
               <h3>{feature.title}</h3>
