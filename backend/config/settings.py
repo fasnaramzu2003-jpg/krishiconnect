@@ -162,3 +162,8 @@ CORS_ALLOWED_ORIGINS = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
 ]
+INSTALLED_APPS += ["farms"]
+INSTALLED_APPS += ["core"]
+
+REST_FRAMEWORK["DEFAULT_PAGINATION_CLASS"] = "rest_framework.pagination.PageNumberPagination"
+REST_FRAMEWORK["PAGE_SIZE"] = 20
