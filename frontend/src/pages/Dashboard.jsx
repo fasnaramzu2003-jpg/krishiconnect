@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
 import api from '../services/api.js'
 
@@ -12,7 +13,7 @@ const ROLE_LABELS = {
 
 const ROLE_CARDS = {
   farmer: [
-    { title: 'My farms', text: 'Add your farms and fields.' },
+    { title: 'My farms', text: 'Add your farms and fields.', to: '/farms' },
     { title: 'My crops', text: 'Record planting, irrigation and harvests.' },
     { title: 'My listings', text: 'Sell your produce to buyers.' },
   ],
@@ -79,8 +80,8 @@ export default function Dashboard() {
         {cards.map((card) => (
           <li key={card.title}>
             <article className="feature-card">
-              <span className="badge">Planned</span>
-              <h2>{card.title}</h2>
+              <span className="badge">{card.to ? 'Available' : 'Planned'}</span>
+              <h2>{card.to ? <Link to={card.to}>{card.title}</Link> : card.title}</h2>
               <p>{card.text}</p>
             </article>
           </li>

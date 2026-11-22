@@ -36,3 +36,18 @@ button.btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
 .field-error { margin: 0; color: #8a1c12; font-size: 0.9rem; }
 .field input[aria-invalid="true"] { border-color: #b3261e; }
+.field textarea {
+  padding: 0.7rem 0.8rem;
+  border: 2px solid #b9cfbf;
+  border-radius: 8px;
+  background: var(--white);
+  font: inherit;
+}
+.success {
+  padding: 0.75rem 1rem;
+  background: #e6f1e8;
+  color: var(--forest);
+  border: 1px solid #9cc7a6;
+  border-radius: 8px;
+}
+.feature-card h2 a { color: var(--forest); }

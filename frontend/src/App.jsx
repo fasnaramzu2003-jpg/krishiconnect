@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 import MainLayout from './layouts/MainLayout.jsx'
 import Dashboard from './pages/Dashboard.jsx'
+import Farms from './pages/Farms.jsx'
 import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
 import NotFound from './pages/NotFound.jsx'
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/farms" element={<Farms />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
