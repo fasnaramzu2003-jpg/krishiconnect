@@ -19,6 +19,7 @@ export default function Navbar() {
           <li><NavLink to="/" end>Home</NavLink></li>
           {user ? (
             <>
+              <li><NavLink to="/dashboard">Dashboard</NavLink></li>
               <li><span>Hello, {user.username}</span></li>
               <li>
                 <button type="button" className="link-button" onClick={handleLogout}>

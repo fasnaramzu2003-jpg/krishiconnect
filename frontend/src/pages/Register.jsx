@@ -39,7 +39,7 @@ export default function Register() {
     setLoading(true)
     try {
       await register(form)
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
       const data = err.response?.data
       if (data && typeof data === 'object' && !data.detail) {
