@@ -10,4 +10,5 @@ urlpatterns = [
     path("api/", include("farms.urls")),
     path("api/", include("crops.urls")),
     path("api/", include("marketplace.urls")),
+    path("api/", include("groupselling.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
