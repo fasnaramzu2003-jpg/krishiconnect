@@ -23,6 +23,7 @@ export default function Navbar() {
               <li><NavLink to="/dashboard">Dashboard</NavLink></li>
               <li><NavLink to="/orders">Orders</NavLink></li>
               <li><NavLink to="/group-sales">Group selling</NavLink></li>
+              <li><NavLink to="/assistant">Assistant</NavLink></li>
               <li><span>Hello, {user.username}</span></li>
               <li>
                 <button type="button" className="link-button" onClick={handleLogout}>
