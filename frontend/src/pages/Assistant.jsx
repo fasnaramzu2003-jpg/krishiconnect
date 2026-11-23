@@ -26,7 +26,7 @@ export default function Assistant() {
       setMessages([
         ...messages,
         { role: 'user', content: text },
-        { role: 'assistant', content: data.answer },
+        { role: 'assistant', content: data.answer,grounded:data.grounded,sources:data.sources, },
       ])
       setQuestion('')
     } catch (err) {
@@ -49,11 +49,31 @@ export default function Assistant() {
 
       <div role="log" aria-live="polite" aria-label="Conversation">
         {messages.map((message, index) => (
-          <p key={index} className="chat-message">
-            <strong>{message.role === 'user' ? 'You: ' : 'Assistant: '}</strong>
-            {message.content}
-          </p>
+          <div key={index}>
+            <p className="chat-message">
+              <strong>{message.role === 'user' ? 'You: ' : 'Assistant: '}</strong>
+              {message.content}
+            </p>
+            {message.role === 'assistant' && message.grounded === false && (
+              <p className="notice">
+                No verified reference was found. This is general AI advice.
+              </p>
+            )}
+            {message.sources && message.sources.length > 0 && (
+              <ul>
+                {message.sources.map((s, i) => (
+                  <li key={i}>
+                    Reference: {s.title} ({s.source_name}){' '}
+                    {s.source_url && (
+                      <a href={s.source_url} target="_blank" rel="noreferrer">link</a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         ))}
+
       </div>
 
       {error && <p role="alert" className="form-error">{error}</p>}

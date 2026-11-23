@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 from crops.models import FarmCrop
 
 from .groq_client import AssistantError, chat
-
+from .retrieval import NO_NOTES_RULE,NOTES_RULE,format_notes,search,sources_of
 SYSTEM_PROMPT = (
     "You are KrishiConnect AI, a farming assistant for farmers in Kerala, India. "
     "Give practical, simple advice about crops, soil, water, pests, diseases and "
@@ -64,6 +64,11 @@ class AskView(APIView):
         context = farm_context(request.user)
         if context:
             system += " " + context
+        hits = search(info["question"])
+        if hits:
+            system += " " + NOTES_RULE + "\n" + format_notes(hits)
+        else:
+            system += " " + NO_NOTES_RULE
 
         messages = [{"role": "system", "content": system}]
         for item in info.get("history", []):
@@ -74,6 +79,15 @@ class AskView(APIView):
             answer = chat(messages)
         except AssistantError as err:
             return Response({"detail": str(err)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
-        return Response({"answer": answer, "disclaimer": DISCLAIMER})
+        
+        return Response(
+            {
+                "answer": answer,
+                "disclaimer": DISCLAIMER,
+                "grounded": bool(hits),
+                "sources": sources_of(hits),
+            }
+        )
+
 
 
