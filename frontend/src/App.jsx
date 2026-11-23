@@ -5,6 +5,7 @@ import MainLayout from './layouts/MainLayout.jsx'
 import Crops from './pages/Crops.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Farms from './pages/Farms.jsx'
+import GroupSales from './pages/GroupSales.jsx'
 import Home from './pages/Home.jsx'
 import ListingDetail from './pages/ListingDetail.jsx'
 import Login from './pages/Login.jsx'
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/crops" element={<Crops />} />
           <Route path="/sell" element={<SellProduce />} />
           <Route path="/orders" element={<Orders />} />
+          <Route path="/group-sales" element={<GroupSales />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Route>

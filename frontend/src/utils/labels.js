@@ -39,3 +39,11 @@ export const ORDER_STATUS_LABELS = {
   delivered: 'Delivered',
   cancelled: 'Cancelled',
 }
+
+
+export const GROUP_STATUS_LABELS = {
+  open: 'Open',
+  filled: 'Fully pledged',
+  fulfilled: 'Fulfilled',
+  cancelled: 'Cancelled',
+}
