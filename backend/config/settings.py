@@ -174,3 +174,4 @@ MEDIA_ROOT = BASE_DIR / "media"
 INSTALLED_APPS += ["groupselling"]
 INSTALLED_APPS += ["assistant"]
 INSTALLED_APPS +=["crophealth"]
+INSTALLED_APPS +=["market"]
