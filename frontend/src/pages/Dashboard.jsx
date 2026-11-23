@@ -14,12 +14,12 @@ const ROLE_LABELS = {
 const ROLE_CARDS = {
   farmer: [
     { title: 'My farms', text: 'Add your farms and fields.', to: '/farms' },
-    { title: 'My crops', text: 'Record planting, irrigation and harvests.' },
-    { title: 'My listings', text: 'Sell your produce to buyers.' },
+    { title: 'My crops', text: 'Record planting, irrigation and harvests.', to:'/crops' },
+    { title: 'My listings', text: 'Sell your produce to buyers.', to:'/sell' },
   ],
   buyer: [
-    { title: 'Browse produce', text: 'Find produce from farmers across Kerala.' },
-    { title: 'My orders', text: 'Track your orders.' },
+    { title: 'Browse produce', text: 'Find produce from farmers across Kerala.', to: '/marketplace' },
+    { title: 'My orders', text: 'Track your orders.',to:'/orders' },
     { title: 'Group sales', text: 'Join group purchases with other buyers.' },
   ],
   expert: [

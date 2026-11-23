@@ -168,3 +168,6 @@ INSTALLED_APPS += ["core"]
 REST_FRAMEWORK["DEFAULT_PAGINATION_CLASS"] = "rest_framework.pagination.PageNumberPagination"
 REST_FRAMEWORK["PAGE_SIZE"] = 20
 INSTALLED_APPS += ["crops"]
+INSTALLED_APPS += ["marketplace"]
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
