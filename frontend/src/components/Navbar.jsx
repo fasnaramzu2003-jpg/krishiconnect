@@ -18,6 +18,7 @@ export default function Navbar() {
         <ul className="nav-links">
           <li><NavLink to="/" end>Home</NavLink></li>
           <li><NavLink to="/marketplace">Marketplace</NavLink></li>
+          <li><NavLink to="/community">Community</NavLink></li>
           {user ? (
             <>
               <li><NavLink to="/dashboard">Dashboard</NavLink></li>

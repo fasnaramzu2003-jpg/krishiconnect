@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard.jsx'
 import Farms from './pages/Farms.jsx'
 import GroupSales from './pages/GroupSales.jsx'
 import Home from './pages/Home.jsx'
+import Community from './pages/Community.jsx'
+import QuestionDetail from './pages/QuestionDetail.jsx'
 import Market from './pages/Market.jsx'
 import CropHealth from './pages/CropHealth.jsx'
 import Assistant from './pages/Assistant.jsx'
@@ -27,6 +29,8 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/marketplace" element={<Marketplace />} />
         <Route path="/marketplace/:id" element={<ListingDetail />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/community/:id" element={<QuestionDetail />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/farms" element={<Farms />} />
