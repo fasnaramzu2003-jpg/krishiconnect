@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard.jsx'
 import Farms from './pages/Farms.jsx'
 import GroupSales from './pages/GroupSales.jsx'
 import Home from './pages/Home.jsx'
+import AdminPanel from './pages/AdminPanel.jsx'
+import Notification from './pages/Notification.jsx'
 import Community from './pages/Community.jsx'
 import QuestionDetail from './pages/QuestionDetail.jsx'
 import Market from './pages/Market.jsx'
@@ -41,6 +43,8 @@ export default function App() {
           <Route path="/assistant" element={<Assistant />} />
           <Route path="/crop-health" element={<CropHealth />} />
           <Route path="/market" element={<Market />} />
+          <Route path="/notification" element={<Notification />} />
+          <Route path="/admin-panel" element={<AdminPanel />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
