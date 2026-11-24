@@ -80,7 +80,7 @@ class QuestionViewSet(
                 qs = qs.filter(answers_count=0)
             if p.get("mine") == "true" and self.request.user.is_authenticated:
                 qs = qs.filter(author=self.request.user)
-        return qs
+        return qs.order_by("-created_at","-id")
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)

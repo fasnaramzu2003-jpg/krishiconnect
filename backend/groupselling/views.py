@@ -57,7 +57,7 @@ class GroupSaleRequestViewSet(
                 qs = qs.filter(district__iexact=params["district"])
             if params.get("crop"):
                 qs = qs.filter(crop_id=params["crop"])
-        return qs
+        return qs.order_by("deadline","-created_at")
 
     def perform_create(self, serializer):
         serializer.save(buyer=self.request.user)

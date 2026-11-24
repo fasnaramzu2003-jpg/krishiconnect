@@ -177,3 +177,29 @@ INSTALLED_APPS +=["crophealth"]
 INSTALLED_APPS +=["market"]
 INSTALLED_APPS +=["community"]
 INSTALLED_APPS +=["notification"]
+
+# --- Production-ready settings (local defaults stay as they are) ---
+import os
+
+DEBUG = os.getenv("DJANGO_DEBUG", "True") == "True"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", SECRET_KEY)
+ALLOWED_HOSTS = [
+    h.strip()
+    for h in os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+    if h.strip()
+]
+CORS_ALLOWED_ORIGINS += [
+    o.strip() for o in os.getenv("CORS_EXTRA_ORIGINS", "").split(",") if o.strip()
+]
+CSRF_TRUSTED_ORIGINS = [
+    o.strip() for o in os.getenv("CSRF_EXTRA_ORIGINS", "").split(",") if o.strip()
+]
+
+if not DEBUG:
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = "DENY"
