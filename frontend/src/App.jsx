@@ -46,7 +46,7 @@ export default function App() {
             <Route path="/assistant" element={<Assistant />} />
             <Route path="/crop-health" element={<CropHealth />} />
             <Route path="/market" element={<Market />} />
-            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/notification" element={<Notification />} />
             <Route path="/admin-panel" element={<AdminPanel />} />
           </Route>
           <Route path="*" element={<NotFound />} />
