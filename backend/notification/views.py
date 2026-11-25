@@ -18,7 +18,7 @@ class NotificationViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
             qs = qs.filter(is_read=False)
         return qs
 
-    @action(detail=False, url_path="unread-count")
+    @action(detail=False,methods=["get"], url_path="unread-count")
     def unread_count(self, request):
         return Response({"count": self.get_queryset().filter(is_read=False).count()})
 
@@ -27,7 +27,7 @@ class NotificationViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
         updated = self.get_queryset().filter(is_read=False).update(is_read=True)
         return Response({"updated": updated})
 
-    @action(detail=True, methods=["post"])
+    @action(detail=True, methods=["post"],url_path="read")
     def read(self, request, pk=None):
         item = self.get_object()
         item.is_read = True
