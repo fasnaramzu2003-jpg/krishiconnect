@@ -15,6 +15,6 @@ urlpatterns = [
     path("api/", include("crophealth.urls")),
     path("api/market/", include("market.urls")),
     path("api/community/", include("community.urls")),
-    path("api/notification/", include("notification.urls")),
+    path("api/notifications/", include("notification.urls")),
     path("api/admin-stats/", AdminStatsView.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
