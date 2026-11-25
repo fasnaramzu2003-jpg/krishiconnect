@@ -1,0 +1,17 @@
+
+.nav-toggle { display: none; }
+
+@media (max-width: 900px) {
+  html, body, #root { max-width: 100vw; overflow-x: hidden; }
+  header.navbar { display: flex !important; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 0.6rem 1rem; }
+  header.navbar .brand { font-size: 1.2rem; }
+  header.navbar .nav-toggle {
+    display: inline-block !important; padding: 8px 14px; font-size: 16px;
+    border: 1px solid #1f6b45; background: #fff; color: #1f6b45; border-radius: 6px;
+  }
+  header.navbar nav { display: none !important; width: 100%; }
+  header.navbar nav.open { display: block !important; }
+  header.navbar .nav-links { display: flex !important; flex-direction: column; align-items: flex-start; gap: 4px; padding: 8px 0; margin: 0; }
+  header.navbar .nav-links a, header.navbar .nav-links span, header.navbar .nav-links .link-button { display: block; padding: 8px 4px; font-size: 16px; white-space: normal; }
+  .hero, .hero-content { max-width: 100%; overflow: hidden; }
+}

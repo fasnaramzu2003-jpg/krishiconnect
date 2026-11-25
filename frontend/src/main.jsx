@@ -15,3 +15,5 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </StrictMode>,
 )
+
+import './styles/mobile.css'
