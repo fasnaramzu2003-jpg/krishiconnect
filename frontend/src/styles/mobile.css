@@ -25,3 +25,7 @@ main li { margin-bottom: 1rem; }
   display: inline-block; padding: 2px 10px; border-radius: 999px;
   background: #e3f1e8; color: #1f6b45; font-size: 0.85rem;
 }
+
+main h2 a, main h2 a:visited,
+main h3 a, main h3 a:visited { color: #1f6b45; }
+main h2 a:hover, main h3 a:hover { color: #14502f; }
