@@ -39,14 +39,13 @@ const sectionRef = useScrollReveal()
     <section id="features" className="section" aria-labelledby="features-title" ref={sectionRef}>
       <h2 id="features-title">Everything a farm needs, in one place</h2>
       <p className="section-lead">
-        These are the features we are building. Features marked Planned are
-        not available yet.
+        These are the features of KrishiConnect AI. Market prices are demo data for now.
       </p>
       <ul className="feature-grid">
         {FEATURES.map((feature) => (
           <li key={feature.title} data-reveal>
             <article className="feature-card">
-              <span className="badge">Planned</span>
+              <span className="badge">Available</span>
               <h3>{feature.title}</h3>
               <p>{feature.text}</p>
             </article>
