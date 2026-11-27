@@ -223,3 +223,6 @@ STORAGES = {
 }
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+if os.getenv("CLOUDINARY_URL"):
+STORAGES["default"] = {"BACKEND": "core.storage.CloudinaryStorage"}

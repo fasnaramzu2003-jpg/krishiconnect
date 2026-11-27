@@ -1,4 +1,6 @@
 asgiref==3.12.1
+certifi==2026.11.20
+cloudinary==1.47.0
 dj-database-url==3.1.2
 Django==5.2.19
 django-cors-headers==4.9.0
@@ -8,7 +10,9 @@ pillow==12.3.0
 psycopg==3.3.9
 psycopg-binary==3.3.9
 python-dotenv==1.2.4
+six==1.17.0
 sqlparse==0.6.1
 typing_extensions==4.16.0
 tzdata==2026.6
+urllib3==2.8.0
 whitenoise==6.12.0
