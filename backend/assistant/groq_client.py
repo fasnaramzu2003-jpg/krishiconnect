@@ -15,7 +15,7 @@ def chat(messages, model=None):
     key = os.getenv("GROQ_API_KEY", "").strip()
     if not key:
         raise AssistantError("The AI service is not set up (missing GROQ_API_KEY).")
-    model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+    model= model or os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
     payload = {
         "model": model,
         "messages": messages,
