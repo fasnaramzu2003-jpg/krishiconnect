@@ -38,3 +38,7 @@ main h2 a:hover, main h3 a:hover { color: #14502f; }
   header.navbar .nav-links a,
   header.navbar .nav-links span { white-space: nowrap; word-break: normal; overflow-wrap: normal; }
 }
+
+
+main a, main a:visited { color: #1f6b45; }
+main a:hover, main a:focus { color: #14502f; }
